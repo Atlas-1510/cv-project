@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-export class Input extends Component {
+class Input extends Component {
   render() {
     return (
       <StyledInput
+        appStyles={this.props.appStyles}
         placeholder={this.props.title}
         type="text"
         aria-label={this.props.title}
@@ -14,11 +15,9 @@ export class Input extends Component {
   }
 }
 
-export default Input;
-
 // Styling
 const StyledInput = styled.input`
-  color: blue;
+  color: ${(props) => props.appStyles.headerColor};
   margin: 0.5rem 0 0.5rem 0;
   padding: 0.5rem;
   width: 100%;
@@ -30,3 +29,5 @@ const StyledInput = styled.input`
 Input.propTypes = {
   title: PropTypes.string.isRequired,
 };
+
+export { Input, StyledInput };
