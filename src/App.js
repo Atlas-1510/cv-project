@@ -29,6 +29,12 @@ export default class App extends Component {
       start: "",
       end: "",
     },
+    education: {
+      institution: "",
+      degree: "",
+      start: "",
+      end: "",
+    },
   };
 
   onSubmit = (e) => {
@@ -72,7 +78,11 @@ export default class App extends Component {
               />
             </Section>
             <Section appStyles={appStyles} title="Education">
-              <Education appStyles={appStyles} />
+              <Education
+                appStyles={appStyles}
+                onChange={this.onChange}
+                stateSection="education"
+              />
               <Button
                 color={appStyles.headerColor}
                 fontColor={appStyles.backgroundColor}

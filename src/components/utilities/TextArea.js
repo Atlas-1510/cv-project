@@ -14,7 +14,9 @@ export default class TextArea extends Component {
         as="textarea"
         placeholder={this.props.title}
         appStyles={this.props.appStyles}
-        onChange={this.props.onChange}
+        onChange={(e) => {
+          this.props.onChange(e, this.props.stateSection);
+        }}
         name={this.props.name}
       ></StyledExtendedInput>
     );
