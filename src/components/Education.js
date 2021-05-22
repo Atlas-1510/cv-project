@@ -34,11 +34,6 @@ export class Education extends Component {
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
         />
-        <Button
-          color={this.props.appStyles.headerColor}
-          fontColor={this.props.appStyles.backgroundColor}
-          label="Add Education"
-        />
       </>
     );
   }

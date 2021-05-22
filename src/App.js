@@ -9,6 +9,7 @@ import Education from "./components/Education";
 import Section from "./components/utilities/Section";
 import Button from "./components/utilities/Button/Button";
 
+import { v4 as uuidv4 } from "uuid";
 import "./App.css";
 
 export default class App extends Component {
@@ -22,13 +23,23 @@ export default class App extends Component {
       email: "",
       description: "",
     },
-    experience: {
-      position: "",
-      organisation: "",
-      location: "",
-      start: "",
-      end: "",
-    },
+    experience: [
+      {
+        id: uuidv4(),
+        position: "",
+        organisation: "",
+        location: "",
+        start: "",
+        end: "",
+      },
+    ],
+    // experience: {
+    //   position: "",
+    //   organisation: "",
+    //   location: "",
+    //   start: "",
+    //   end: "",
+    // },
     education: {
       institution: "",
       degree: "",
@@ -42,14 +53,61 @@ export default class App extends Component {
     console.log(this.state);
   };
 
-  onChange = (e, stateSection) => {
-    this.setState((prevState) => ({
-      ...prevState,
-      [stateSection]: {
-        ...prevState[stateSection],
-        [e.target.name]: [e.target.value],
-      },
-    }));
+  onChange = (e, stateSection, id) => {
+    this.setState((prevState) => {
+      // If there is an ID
+      if (id) {
+        // Create a copy of state, to reflect changes
+        const newStateObject = {};
+        // Go through each part of state, and if it's not the part that has changed then put
+        // it in the newStateObject unchanged
+        for (const [key, value] of Object.entries(prevState)) {
+          if (key !== stateSection) {
+            newStateObject[key] = value;
+          } else {
+            // If this is the bit that has changed (exp or ed), then
+            // iterate over each array entry to find the one that has changed
+            // If the entry hasn't changed, then copy it over as normal
+            newStateObject[key] = prevState[stateSection].map((entry) => {
+              if (entry.id !== id) {
+                return entry;
+              } else {
+                // If the entry has changed, copy it all over, but update
+                // the part that has changed
+                return {
+                  ...entry,
+                  [e.target.name]: [e.target.value],
+                };
+              }
+            });
+          }
+        }
+        return newStateObject;
+        // If there is no ID, then just update as normal
+      } else {
+        return {
+          ...prevState,
+          [stateSection]: {
+            ...prevState[stateSection],
+            [e.target.name]: [e.target.value],
+          },
+        };
+      }
+    });
+
+    // {
+    //   ...prevState,
+    //   [stateSection]: {
+    //     ...prevState[stateSection],
+    //     [e.target.name]: [e.target.value],
+    //   },
+    // }
+  };
+
+  addExperience = () => {
+    // Configure state to use arrays for exp and ed entries
+    // Add new experience entry to state
+    // then, for each exp state entry render an exp section
   };
 
   render() {
@@ -70,6 +128,7 @@ export default class App extends Component {
                 appStyles={appStyles}
                 onChange={this.onChange}
                 stateSection="experience"
+                id={this.state.experience[0].id}
               />
               <Button
                 color={appStyles.headerColor}

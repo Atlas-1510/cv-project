@@ -12,6 +12,7 @@ export class Experience extends Component {
           name="position"
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
+          id={this.props.id}
         ></Input>
         <Input
           appStyles={this.props.appStyles}
@@ -19,6 +20,7 @@ export class Experience extends Component {
           name="organisation"
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
+          id={this.props.id}
         ></Input>
         <Input
           appStyles={this.props.appStyles}
@@ -26,6 +28,7 @@ export class Experience extends Component {
           name="location"
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
+          id={this.props.id}
         ></Input>
         <Input
           appStyles={this.props.appStyles}
@@ -33,6 +36,7 @@ export class Experience extends Component {
           name="start"
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
+          id={this.props.id}
         ></Input>
         <Input
           appStyles={this.props.appStyles}
@@ -40,12 +44,13 @@ export class Experience extends Component {
           name="end"
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
+          id={this.props.id}
         ></Input>
-        <Button
+        {/* <Button
           color={this.props.appStyles.headerColor}
           fontColor={this.props.appStyles.backgroundColor}
           label="Delete"
-        ></Button>
+        ></Button> */}
       </>
     );
   }
