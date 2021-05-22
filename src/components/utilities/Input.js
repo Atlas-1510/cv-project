@@ -10,6 +10,9 @@ class Input extends Component {
         placeholder={this.props.title}
         type="text"
         aria-label={this.props.title}
+        onChange={this.props.onChange}
+        name={this.props.name}
+        value={this.props.value}
       ></StyledInput>
     );
   }

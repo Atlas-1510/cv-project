@@ -12,14 +12,33 @@ import Button from "./components/utilities/Button/Button";
 import "./App.css";
 
 export default class App extends Component {
+  state = {
+    firstName: "",
+  };
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    console.log(e);
+  };
+
+  onChange = (e) => {
+    this.setState({
+      [e.target.name]: [e.target.value],
+    });
+  };
+
   render() {
     return (
       <AppWrapper>
         <Header appStyles={appStyles}></Header>
         <Body appStyles={appStyles}>
-          <Form appStyles={appStyles}>
+          <Form appStyles={appStyles} onSubmit={this.onSubmit}>
             <Section appStyles={appStyles} title="Personal Information">
-              <PersonalInformation appStyles={appStyles} />
+              <PersonalInformation
+                appStyles={appStyles}
+                onChange={this.onChange}
+                state={this.state}
+              />
             </Section>
             <Section title="Experience" appStyles={appStyles}>
               <Experience appStyles={appStyles} />

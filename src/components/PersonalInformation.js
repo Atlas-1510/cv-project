@@ -6,7 +6,13 @@ export default class PersonalInformation extends PureComponent {
   render() {
     return (
       <>
-        <Input appStyles={this.props.appStyles} title="First name" />
+        <Input
+          appStyles={this.props.appStyles}
+          onChange={this.props.onChange}
+          title="First name"
+          name="firstName"
+          value={this.props.state.firstName}
+        />
         <Input appStyles={this.props.appStyles} title="Last name" />
         <Input appStyles={this.props.appStyles} title="Title" />
         <Input appStyles={this.props.appStyles} title="Address" />
