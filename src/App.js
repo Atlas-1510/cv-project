@@ -14,11 +14,17 @@ import "./App.css";
 export default class App extends Component {
   state = {
     firstName: "",
+    lastName: "",
+    title: "",
+    address: "",
+    phoneNumber: "",
+    email: "",
+    description: "",
   };
 
   onSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
+    // Some function that take the current state and makes the CV
   };
 
   onChange = (e) => {

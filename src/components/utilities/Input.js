@@ -12,7 +12,7 @@ class Input extends Component {
         aria-label={this.props.title}
         onChange={this.props.onChange}
         name={this.props.name}
-        value={this.props.value}
+        // value={this.props.value}
       ></StyledInput>
     );
   }
