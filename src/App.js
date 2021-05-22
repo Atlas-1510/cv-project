@@ -13,23 +13,29 @@ import "./App.css";
 
 export default class App extends Component {
   state = {
-    firstName: "",
-    lastName: "",
-    title: "",
-    address: "",
-    phoneNumber: "",
-    email: "",
-    description: "",
+    personalInfo: {
+      firstName: "",
+      lastName: "",
+      title: "",
+      address: "",
+      phoneNumber: "",
+      email: "",
+      description: "",
+    },
   };
 
   onSubmit = (e) => {
     e.preventDefault();
-    // Some function that take the current state and makes the CV
+    console.log(this.state);
   };
 
-  onChange = (e) => {
+  onChange = (e, stateSection) => {
+    console.log(e, stateSection);
     this.setState({
-      [e.target.name]: [e.target.value],
+      [stateSection]: {
+        ...this.state.stateSection,
+        [e.target.name]: [e.target.value],
+      },
     });
   };
 
@@ -43,7 +49,7 @@ export default class App extends Component {
               <PersonalInformation
                 appStyles={appStyles}
                 onChange={this.onChange}
-                state={this.state}
+                stateSection="personalInfo"
               />
             </Section>
             <Section title="Experience" appStyles={appStyles}>
