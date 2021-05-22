@@ -22,6 +22,13 @@ export default class App extends Component {
       email: "",
       description: "",
     },
+    experience: {
+      position: "",
+      organisation: "",
+      location: "",
+      start: "",
+      end: "",
+    },
   };
 
   onSubmit = (e) => {
@@ -30,13 +37,13 @@ export default class App extends Component {
   };
 
   onChange = (e, stateSection) => {
-    console.log(e, stateSection);
-    this.setState({
+    this.setState((prevState) => ({
+      ...prevState,
       [stateSection]: {
-        ...this.state.stateSection,
+        ...prevState[stateSection],
         [e.target.name]: [e.target.value],
       },
-    });
+    }));
   };
 
   render() {
@@ -53,7 +60,11 @@ export default class App extends Component {
               />
             </Section>
             <Section title="Experience" appStyles={appStyles}>
-              <Experience appStyles={appStyles} />
+              <Experience
+                appStyles={appStyles}
+                onChange={this.onChange}
+                stateSection="experience"
+              />
               <Button
                 color={appStyles.headerColor}
                 fontColor={appStyles.backgroundColor}

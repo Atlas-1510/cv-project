@@ -12,7 +12,6 @@ export default class PersonalInformation extends PureComponent {
           onChange={this.props.onChange}
           name="firstName"
           stateSection={this.props.stateSection}
-          // value={this.props.state.firstName}
         />
         <Input
           appStyles={this.props.appStyles}
