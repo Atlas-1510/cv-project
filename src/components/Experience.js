@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Input } from "./utilities/Input";
-import TextArea from "./utilities/TextArea";
+import DeleteButton from "./utilities/Button/DeleteButton";
 
 export class Experience extends Component {
   render() {
@@ -11,6 +11,7 @@ export class Experience extends Component {
         <Input appStyles={this.props.appStyles} title="Location"></Input>
         <Input appStyles={this.props.appStyles} title="Start date"></Input>
         <Input appStyles={this.props.appStyles} title="End date"></Input>
+        <DeleteButton appStyles={this.props.appStyles}></DeleteButton>
       </>
     );
   }
