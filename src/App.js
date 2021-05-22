@@ -5,7 +5,7 @@ import Body from "./components/Body";
 import Form from "./components/Form";
 import PersonalInformation from "./components/PersonalInformation";
 import Experiences from "./components/Experiences/Experiences";
-import Education from "./components/Education";
+import Educations from "./components/Education/Educations";
 import Section from "./components/utilities/Section";
 import Button from "./components/utilities/Button/Button";
 
@@ -104,6 +104,19 @@ export default class App extends Component {
     });
   };
 
+  addEducation = () => {
+    const newEducation = {
+      id: uuidv4(),
+      institution: "",
+      degree: "",
+      start: "",
+      end: "",
+    };
+    this.setState({
+      education: [...this.state.experience, newEducation],
+    });
+  };
+
   deleteEntry = (id, stateSection) => {
     this.setState({
       [stateSection]: this.state[stateSection].filter(
@@ -142,16 +155,19 @@ export default class App extends Component {
               />
             </Section>
             <Section appStyles={appStyles} title="Education">
-              <Education
+              <Educations
+                educations={this.state.education}
                 appStyles={appStyles}
                 onChange={this.onChange}
                 stateSection="education"
-                id={this.state.education[0].id}
+                deleteEntry={this.deleteEntry}
               />
               <Button
                 color={appStyles.headerColor}
                 fontColor={appStyles.backgroundColor}
                 label="Add Education"
+                onClick={() => this.addEducation()}
+                type="button"
               />
             </Section>
             <Section appStyles={appStyles} title="">

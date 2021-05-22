@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Input } from "./utilities/Input";
-import Button from "./utilities/Button/Button";
+import { Input } from "../utilities/Input";
+import Button from "../utilities/Button/Button";
 
 export class Education extends Component {
   render() {
