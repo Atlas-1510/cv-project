@@ -6,10 +6,8 @@ import Form from "./components/Form";
 import PersonalInformation from "./components/PersonalInformation";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
-import AddButton from "./components/utilities/Button/AddButton";
 import Section from "./components/utilities/Section";
-import GenerateButton from "./components/utilities/Button/GenerateButton";
-import ExampleButton from "./components/utilities/Button/ExampleButton";
+import Button from "./components/utilities/Button/Button";
 
 import "./App.css";
 
@@ -25,15 +23,37 @@ export default class App extends Component {
             </Section>
             <Section title="Experience" appStyles={appStyles}>
               <Experience appStyles={appStyles} />
-              <AddButton appStyles={appStyles} label="Add Experience" />
+              <Button
+                color={appStyles.headerColor}
+                fontColor={appStyles.backgroundColor}
+                label="Add Experience"
+              />
             </Section>
             <Section appStyles={appStyles} title="Education">
               <Education appStyles={appStyles} />
-              <AddButton appStyles={appStyles} label="Add Education" />
+              <Button
+                color={appStyles.headerColor}
+                fontColor={appStyles.backgroundColor}
+                label="Add Education"
+              />
             </Section>
             <Section appStyles={appStyles} title="">
-              <GenerateButton appStyles={appStyles} />
-              <ExampleButton appStyles={appStyles} />
+              <Button
+                color="green"
+                fontColor={appStyles.backgroundColor}
+                label="Generate"
+                type="submit"
+              />
+              <Button
+                color="orange"
+                fontColor={appStyles.backgroundColor}
+                label="Load Example"
+              />
+              <Button
+                color="red"
+                fontColor={appStyles.backgroundColor}
+                label="Reset"
+              />
             </Section>
           </Form>
         </Body>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Input } from "./utilities/Input";
-import DeleteButton from "./utilities/Button/DeleteButton";
+import Button from "./utilities/Button/Button";
 
 export class Education extends Component {
   render() {
@@ -10,7 +10,11 @@ export class Education extends Component {
         <Input appStyles={this.props.appStyles} title="Degree" />
         <Input appStyles={this.props.appStyles} title="Start Date" />
         <Input appStyles={this.props.appStyles} title="End Date" />
-        <DeleteButton appStyles={this.props.appStyles} />
+        <Button
+          color={this.props.appStyles.headerColor}
+          fontColor={this.props.appStyles.backgroundColor}
+          label="Add Education"
+        />
       </>
     );
   }
