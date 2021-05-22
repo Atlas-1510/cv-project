@@ -33,19 +33,15 @@ export default class App extends Component {
         end: "",
       },
     ],
-    // experience: {
-    //   position: "",
-    //   organisation: "",
-    //   location: "",
-    //   start: "",
-    //   end: "",
-    // },
-    education: {
-      institution: "",
-      degree: "",
-      start: "",
-      end: "",
-    },
+    education: [
+      {
+        id: uuidv4(),
+        institution: "",
+        degree: "",
+        start: "",
+        end: "",
+      },
+    ],
   };
 
   onSubmit = (e) => {
@@ -141,6 +137,7 @@ export default class App extends Component {
                 appStyles={appStyles}
                 onChange={this.onChange}
                 stateSection="education"
+                id={this.state.education[0].id}
               />
               <Button
                 color={appStyles.headerColor}
