@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import Form from "./components/Form";
 import PersonalInformation from "./components/PersonalInformation";
-import Experience from "./components/Experience";
+import Experiences from "./components/Experiences/Experiences";
 import Education from "./components/Education";
 import Section from "./components/utilities/Section";
 import Button from "./components/utilities/Button/Button";
@@ -46,30 +46,21 @@ export default class App extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    console.log("bruh");
   };
 
   onChange = (e, stateSection, id) => {
     this.setState((prevState) => {
-      // If there is an ID
       if (id) {
-        // Create a copy of state, to reflect changes
         const newStateObject = {};
-        // Go through each part of state, and if it's not the part that has changed then put
-        // it in the newStateObject unchanged
         for (const [key, value] of Object.entries(prevState)) {
           if (key !== stateSection) {
             newStateObject[key] = value;
           } else {
-            // If this is the bit that has changed (exp or ed), then
-            // iterate over each array entry to find the one that has changed
-            // If the entry hasn't changed, then copy it over as normal
             newStateObject[key] = prevState[stateSection].map((entry) => {
               if (entry.id !== id) {
                 return entry;
               } else {
-                // If the entry has changed, copy it all over, but update
-                // the part that has changed
                 return {
                   ...entry,
                   [e.target.name]: [e.target.value],
@@ -79,7 +70,6 @@ export default class App extends Component {
           }
         }
         return newStateObject;
-        // If there is no ID, then just update as normal
       } else {
         return {
           ...prevState,
@@ -101,9 +91,25 @@ export default class App extends Component {
   };
 
   addExperience = () => {
-    // Configure state to use arrays for exp and ed entries
-    // Add new experience entry to state
-    // then, for each exp state entry render an exp section
+    const newExperience = {
+      id: uuidv4(),
+      position: "",
+      organisation: "",
+      location: "",
+      start: "",
+      end: "",
+    };
+    this.setState({
+      experience: [...this.state.experience, newExperience],
+    });
+  };
+
+  deleteEntry = (id, stateSection) => {
+    this.setState({
+      [stateSection]: this.state[stateSection].filter(
+        (entry) => entry.id !== id
+      ),
+    });
   };
 
   render() {
@@ -120,16 +126,19 @@ export default class App extends Component {
               />
             </Section>
             <Section title="Experience" appStyles={appStyles}>
-              <Experience
+              <Experiences
+                experiences={this.state.experience}
                 appStyles={appStyles}
                 onChange={this.onChange}
                 stateSection="experience"
-                id={this.state.experience[0].id}
+                deleteEntry={this.deleteEntry}
               />
               <Button
                 color={appStyles.headerColor}
                 fontColor={appStyles.backgroundColor}
                 label="Add Experience"
+                onClick={() => this.addExperience()}
+                type="button"
               />
             </Section>
             <Section appStyles={appStyles} title="Education">
@@ -151,6 +160,7 @@ export default class App extends Component {
                 fontColor={appStyles.backgroundColor}
                 label="Generate"
                 type="submit"
+                onClick={this.onSubmit}
               />
               <Button
                 color="orange"

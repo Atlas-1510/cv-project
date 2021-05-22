@@ -21,6 +21,7 @@ export default class Button extends Component {
         color={this.props.color}
         fontColor={this.props.fontColor}
         type={this.props.type}
+        onClick={this.props.onClick}
       >
         {this.props.label}
       </StyledButton>
