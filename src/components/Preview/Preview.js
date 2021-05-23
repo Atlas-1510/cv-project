@@ -7,7 +7,7 @@ import MainPanel from "./MainPanel";
 const PreviewWrapper = styled.div`
   width: 210mm;
   height: 297mm;
-  transform: scale(0.4);
+  transform: scale(0.8);
   transform-origin: top;
   display: grid;
   grid-template-columns: 70% 30%;
@@ -21,8 +21,12 @@ export class Preview extends Component {
     return (
       <PreviewWrapper>
         <Header personalInfo={userInfo.personalInfo} />
-        <RightPanel />
-        <MainPanel />
+        <RightPanel personalInfo={userInfo.personalInfo} />
+        <MainPanel
+          personalInfo={userInfo.personalInfo}
+          experiences={userInfo.experience}
+          educations={userInfo.education}
+        />
       </PreviewWrapper>
     );
   }
