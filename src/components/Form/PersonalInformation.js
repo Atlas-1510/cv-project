@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
-import { Input } from "./utilities/Input";
-import TextArea from "./utilities/TextArea";
+import { Input } from "../utilities/Input";
+import TextArea from "../utilities/TextArea";
 
 export default class PersonalInformation extends PureComponent {
   render() {

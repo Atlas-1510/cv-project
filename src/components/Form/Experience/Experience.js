@@ -1,46 +1,53 @@
 import React, { Component } from "react";
-import { Input } from "../utilities/Input";
-import Button from "../utilities/Button/Button";
+import { Input } from "../../utilities/Input";
 
-export class Education extends Component {
+export class Experience extends Component {
   render() {
     return (
       <>
         <Input
           appStyles={this.props.appStyles}
-          title="Institution"
-          name="institution"
+          title="Position"
+          name="position"
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
           id={this.props.id}
-        />
+        ></Input>
         <Input
           appStyles={this.props.appStyles}
-          title="Degree"
-          name="degree"
+          title="Organisation"
+          name="organisation"
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
           id={this.props.id}
-        />
+        ></Input>
         <Input
           appStyles={this.props.appStyles}
-          title="Start Date"
+          title="Location"
+          name="location"
+          onChange={this.props.onChange}
+          stateSection={this.props.stateSection}
+          id={this.props.id}
+        ></Input>
+        <Input
+          appStyles={this.props.appStyles}
+          title="Start date"
           name="start"
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
           id={this.props.id}
-        />
+        ></Input>
         <Input
           appStyles={this.props.appStyles}
-          title="End Date"
+          title="End date"
           name="end"
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
           id={this.props.id}
-        />
+        ></Input>
       </>
     );
   }
 }
 
-export default Education;
+export default Experience;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Experience from "./Experience";
-import Button from "../utilities/Button/Button";
+import Button from "../../utilities/Button/Button";
 
 export class Experiences extends Component {
   render() {

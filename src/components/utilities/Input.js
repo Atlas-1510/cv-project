@@ -8,6 +8,7 @@ class Input extends Component {
       <StyledInput
         appStyles={this.props.appStyles}
         placeholder={this.props.title}
+        autoComplete="off"
         type="text"
         aria-label={this.props.title}
         onChange={(e) => {

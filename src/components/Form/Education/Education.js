@@ -1,53 +1,45 @@
 import React, { Component } from "react";
-import { Input } from "../utilities/Input";
+import { Input } from "../../utilities/Input";
 
-export class Experience extends Component {
+export class Education extends Component {
   render() {
     return (
       <>
         <Input
           appStyles={this.props.appStyles}
-          title="Position"
-          name="position"
+          title="Institution"
+          name="institution"
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
           id={this.props.id}
-        ></Input>
+        />
         <Input
           appStyles={this.props.appStyles}
-          title="Organisation"
-          name="organisation"
+          title="Degree"
+          name="degree"
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
           id={this.props.id}
-        ></Input>
+        />
         <Input
           appStyles={this.props.appStyles}
-          title="Location"
-          name="location"
-          onChange={this.props.onChange}
-          stateSection={this.props.stateSection}
-          id={this.props.id}
-        ></Input>
-        <Input
-          appStyles={this.props.appStyles}
-          title="Start date"
+          title="Start Date"
           name="start"
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
           id={this.props.id}
-        ></Input>
+        />
         <Input
           appStyles={this.props.appStyles}
-          title="End date"
+          title="End Date"
           name="end"
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
           id={this.props.id}
-        ></Input>
+        />
       </>
     );
   }
 }
 
-export default Experience;
+export default Education;

@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Header from "./components/Header";
+import Header from "./components/Form/Header";
 import Body from "./components/Body";
-import Form from "./components/Form";
-import PersonalInformation from "./components/PersonalInformation";
-import Experiences from "./components/Experiences/Experiences";
-import Educations from "./components/Education/Educations";
+import Form from "./components/Form/Form";
+import PersonalInformation from "./components/Form/PersonalInformation";
+import Experiences from "./components/Form/Experience/Experiences";
+import Educations from "./components/Form/Education/Educations";
 import Section from "./components/utilities/Section";
 import Button from "./components/utilities/Button/Button";
+import Preview from "./components/Preview/Preview";
 
 import { v4 as uuidv4 } from "uuid";
 import "./App.css";
@@ -80,14 +81,6 @@ export default class App extends Component {
         };
       }
     });
-
-    // {
-    //   ...prevState,
-    //   [stateSection]: {
-    //     ...prevState[stateSection],
-    //     [e.target.name]: [e.target.value],
-    //   },
-    // }
   };
 
   addExperience = () => {
@@ -190,6 +183,7 @@ export default class App extends Component {
               />
             </Section>
           </Form>
+          <Preview userInfo={this.state} />
         </Body>
       </AppWrapper>
     );
