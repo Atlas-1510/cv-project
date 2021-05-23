@@ -1,23 +1,24 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Textfit } from "react-textfit";
 
-const HeaderWrapper = styled.header`
+const HeaderWrapper = styled.div`
   grid-area: header;
   background: #313638;
   color: #f09d51;
-  font-size: 2rem;
-  padding-left: 1rem;
+  padding: 1rem;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export class Header extends Component {
   render() {
     return (
       <HeaderWrapper>
-        <h1>
+        <Textfit mode="single" max={75}>
           {this.props.personalInfo.firstName} {this.props.personalInfo.lastName}
-        </h1>
+        </Textfit>
       </HeaderWrapper>
     );
   }
