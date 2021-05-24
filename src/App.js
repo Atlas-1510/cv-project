@@ -25,24 +25,101 @@ export default class App extends Component {
       description: "",
     },
     experience: [
-      {
-        id: uuidv4(),
-        position: "",
-        organisation: "",
-        location: "",
-        start: "",
-        end: "",
-      },
+      // {
+      //   id: uuidv4(),
+      //   position: "",
+      //   organisation: "",
+      //   location: "",
+      //   start: "",
+      //   end: "",
+      // },
     ],
     education: [
-      {
-        id: uuidv4(),
-        institution: "",
-        degree: "",
-        start: "",
-        end: "",
-      },
+      // {
+      //   id: uuidv4(),
+      //   institution: "",
+      //   degree: "",
+      //   start: "",
+      //   end: "",
+      // },
     ],
+  };
+
+  loadExample = () => {
+    const example = {
+      personalInfo: {
+        firstName: "Jason",
+        lastName: "Aravanis",
+        title: "Mr",
+        address: "Unit 1 31 Alfred Road Glen Iris VIC 3146",
+        phoneNumber: "0467 500 550",
+        email: "j.aravanis@icloud.com",
+        description:
+          "I am a 26 year old Australian male, with a background in finance and economics. I am seeking a career change into software engineering to further my professional development. Abilities that would make me a good fit for this position include strong communication and public speaking skills, the ability to self-learn, and well-developed organisational habits.",
+      },
+      experience: [
+        {
+          id: uuidv4(),
+          position: "Senior Industry Analyst",
+          organisation: "IBISWorld",
+          location: "Melbourne",
+          start: "March 2017",
+          end: "October 2019",
+        },
+        {
+          id: uuidv4(),
+          position: "Media Coordinator",
+          organisation: "IBISWorld",
+          location: "Melbourne",
+          start: "November 2019",
+          end: "May 2021",
+        },
+      ],
+      education: [
+        {
+          id: uuidv4(),
+          institution: "The University of Melbourne",
+          degree: "Bachelor of Commerce",
+          start: "January 2014",
+          end: "December 2016",
+        },
+      ],
+    };
+    this.setState(example);
+  };
+
+  resetForm = () => {
+    const emptyForm = {
+      personalInfo: {
+        firstName: "",
+        lastName: "",
+        title: "",
+        address: "",
+        phoneNumber: "",
+        email: "",
+        description: "",
+      },
+      experience: [
+        // {
+        //   id: uuidv4(),
+        //   position: "",
+        //   organisation: "",
+        //   location: "",
+        //   start: "",
+        //   end: "",
+        // },
+      ],
+      education: [
+        // {
+        //   id: uuidv4(),
+        //   institution: "",
+        //   degree: "",
+        //   start: "",
+        //   end: "",
+        // },
+      ],
+    };
+    this.setState(emptyForm);
   };
 
   onSubmit = (e) => {
@@ -129,6 +206,7 @@ export default class App extends Component {
                 appStyles={appStyles}
                 onChange={this.onChange}
                 stateSection="personalInfo"
+                personalInfo={this.state.personalInfo}
               />
             </Section>
             <Section title="Experience" appStyles={appStyles}>
@@ -175,11 +253,13 @@ export default class App extends Component {
                 color="orange"
                 fontColor={appStyles.backgroundColor}
                 label="Load Example"
+                onClick={this.loadExample}
               />
               <Button
                 color="red"
                 fontColor={appStyles.backgroundColor}
                 label="Reset"
+                onClick={this.resetForm}
               />
             </Section>
           </Form>

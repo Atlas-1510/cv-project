@@ -12,6 +12,7 @@ export class Education extends Component {
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
           id={this.props.id}
+          value={this.props.education.institution}
         />
         <Input
           appStyles={this.props.appStyles}
@@ -20,6 +21,7 @@ export class Education extends Component {
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
           id={this.props.id}
+          value={this.props.education.degree}
         />
         <Input
           appStyles={this.props.appStyles}
@@ -28,6 +30,7 @@ export class Education extends Component {
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
           id={this.props.id}
+          value={this.props.education.start}
         />
         <Input
           appStyles={this.props.appStyles}
@@ -36,6 +39,7 @@ export class Education extends Component {
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
           id={this.props.id}
+          value={this.props.education.end}
         />
       </>
     );

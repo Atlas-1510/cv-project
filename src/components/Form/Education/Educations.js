@@ -11,6 +11,7 @@ export class Educations extends Component {
           onChange={this.props.onChange}
           stateSection="education"
           id={education.id}
+          education={education}
         />
         <Button
           color={this.props.appStyles.headerColor}

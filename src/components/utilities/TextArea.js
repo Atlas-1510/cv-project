@@ -18,6 +18,7 @@ export default class TextArea extends Component {
           this.props.onChange(e, this.props.stateSection);
         }}
         name={this.props.name}
+        value={this.props.value}
       ></StyledExtendedInput>
     );
   }

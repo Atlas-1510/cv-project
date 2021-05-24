@@ -23,7 +23,7 @@ export class RightPanel extends Component {
         <Container>
           <h3>Address</h3>
           <StyledParagraph>{personalInfo.address}</StyledParagraph>
-          <h3>Phone Number</h3>
+          <h3>Phone</h3>
           <StyledParagraph>{personalInfo.phoneNumber}</StyledParagraph>
           <h3>Email</h3>
           <StyledParagraph>{personalInfo.email}</StyledParagraph>

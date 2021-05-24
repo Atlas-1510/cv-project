@@ -16,7 +16,7 @@ class Input extends Component {
         }}
         name={this.props.name}
         id={this.props.id}
-        // value={this.props.value}
+        value={this.props.value}
       ></StyledInput>
     );
   }

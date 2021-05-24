@@ -11,6 +11,7 @@ export class Experiences extends Component {
           onChange={this.props.onChange}
           stateSection="experience"
           id={experience.id}
+          experience={experience}
         />
         <Button
           color={this.props.appStyles.headerColor}

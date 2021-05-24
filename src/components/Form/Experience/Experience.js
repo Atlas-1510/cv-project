@@ -12,6 +12,7 @@ export class Experience extends Component {
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
           id={this.props.id}
+          value={this.props.experience.position}
         ></Input>
         <Input
           appStyles={this.props.appStyles}
@@ -20,6 +21,7 @@ export class Experience extends Component {
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
           id={this.props.id}
+          value={this.props.experience.organisation}
         ></Input>
         <Input
           appStyles={this.props.appStyles}
@@ -28,6 +30,7 @@ export class Experience extends Component {
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
           id={this.props.id}
+          value={this.props.experience.location}
         ></Input>
         <Input
           appStyles={this.props.appStyles}
@@ -36,6 +39,7 @@ export class Experience extends Component {
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
           id={this.props.id}
+          value={this.props.experience.start}
         ></Input>
         <Input
           appStyles={this.props.appStyles}
@@ -44,6 +48,7 @@ export class Experience extends Component {
           onChange={this.props.onChange}
           stateSection={this.props.stateSection}
           id={this.props.id}
+          value={this.props.experience.end}
         ></Input>
       </>
     );

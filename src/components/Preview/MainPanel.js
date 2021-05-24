@@ -18,6 +18,7 @@ const StyledHeading = styled.h1`
 
 const StyledParagraph = styled.p`
   margin-top: 0.5rem;
+  line-height: 150%;
 `;
 
 export class MainPanel extends Component {
