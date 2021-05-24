@@ -5,11 +5,11 @@ import RightPanel from "./RightPanel";
 import MainPanel from "./MainPanel";
 
 const PreviewWrapper = styled.div`
-  width: 210mm;
-  height: 297mm;
-  transform: scale(0.8);
-  transform-origin: top;
+  ${"" /* Fix the positioning into the center later */}
+  width: 209mm;
+  height: 296mm;
   display: grid;
+  position: relative;
   grid-template-columns: 70% 30%;
   grid-template-rows: 10% 90%;
   grid-template-areas: "header header" "mainPanel rightPanel";

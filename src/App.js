@@ -9,8 +9,10 @@ import Educations from "./components/Form/Education/Educations";
 import Section from "./components/utilities/Section";
 import Button from "./components/utilities/Button/Button";
 import Preview from "./components/Preview/Preview";
+import PreviewWrapper from "./components/Preview/PreviewWrapper";
 
 import { v4 as uuidv4 } from "uuid";
+import ReactToPrint from "react-to-print";
 import "./App.css";
 
 export default class App extends Component {
@@ -120,11 +122,6 @@ export default class App extends Component {
       ],
     };
     this.setState(emptyForm);
-  };
-
-  onSubmit = (e) => {
-    e.preventDefault();
-    console.log("bruh");
   };
 
   onChange = (e, stateSection, id) => {
@@ -242,17 +239,24 @@ export default class App extends Component {
               />
             </Section>
             <Section appStyles={appStyles} title="">
-              <Button
-                color="green"
-                fontColor={appStyles.backgroundColor}
-                label="Generate"
-                type="submit"
-                onClick={this.onSubmit}
+              <ReactToPrint
+                trigger={() => {
+                  return (
+                    <Button
+                      color="green"
+                      fontColor={appStyles.backgroundColor}
+                      label="Generate"
+                      type="button"
+                    />
+                  );
+                }}
+                content={() => this.componentRef}
               />
               <Button
                 color="orange"
                 fontColor={appStyles.backgroundColor}
                 label="Load Example"
+                type="button"
                 onClick={this.loadExample}
               />
               <Button
@@ -263,7 +267,12 @@ export default class App extends Component {
               />
             </Section>
           </Form>
-          <Preview userInfo={this.state} />
+          <PreviewWrapper>
+            <Preview
+              userInfo={this.state}
+              ref={(el) => (this.componentRef = el)}
+            />
+          </PreviewWrapper>
         </Body>
       </AppWrapper>
     );
@@ -277,8 +286,10 @@ const AppWrapper = styled.div`
 `;
 
 const appStyles = {
-  headerColor: "#14213D",
-  titleColor: "#FCA311",
+  headerColor: "#313638",
+  titleColor: "#F09D51",
+  // backgroundColor: "#EEEDE8",
   backgroundColor: "#f5f5f5",
-  sectionColor: "#FEE0AE",
+  // sectionColor: "#FEE0AE",
+  sectionColor: "#E0DFD5",
 };
