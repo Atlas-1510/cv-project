@@ -4,7 +4,7 @@ import Header from "./Header";
 import RightPanel from "./RightPanel";
 import MainPanel from "./MainPanel";
 
-const PreviewWrapper = styled.div`
+const PreviewStyler = styled.div`
   ${"" /* Fix the positioning into the center later */}
   width: 209mm;
   height: 296mm;
@@ -19,7 +19,7 @@ export class Preview extends Component {
   render() {
     const { userInfo } = this.props;
     return (
-      <PreviewWrapper>
+      <PreviewStyler>
         <Header personalInfo={userInfo.personalInfo} />
         <RightPanel personalInfo={userInfo.personalInfo} />
         <MainPanel
@@ -27,7 +27,7 @@ export class Preview extends Component {
           experiences={userInfo.experience}
           educations={userInfo.education}
         />
-      </PreviewWrapper>
+      </PreviewStyler>
     );
   }
 }

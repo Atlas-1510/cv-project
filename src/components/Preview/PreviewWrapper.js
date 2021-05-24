@@ -9,6 +9,9 @@ const Wrapper = styled.div`
   justify-content: center;
   max-height: auto;
 
+  position: sticky;
+  top: 0px;
+
   @media (min-width: 201px) and (max-width: 300px) {
     zoom: 0.3;
   }

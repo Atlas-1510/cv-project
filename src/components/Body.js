@@ -15,8 +15,16 @@ export default Body;
 
 const BodyStyles = styled.main`
   background: ${(props) => props.appStyles.backgroundColor};
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @media (min-width: 801px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
 `;
