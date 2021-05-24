@@ -6,8 +6,8 @@ import MainPanel from "./MainPanel";
 
 const PreviewStyler = styled.div`
   ${"" /* Fix the positioning into the center later */}
-  width: 209mm;
-  height: 296mm;
+  width: 209.9mm;
+  height: 296.9mm;
   display: grid;
   position: relative;
   grid-template-columns: 70% 30%;

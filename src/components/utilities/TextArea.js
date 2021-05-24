@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { StyledInput } from "./Input";
 
 const StyledExtendedInput = styled(StyledInput)`
-  min-height: 2rem;
+  min-height: 6rem;
   font-family: inherit;
 `;
 
