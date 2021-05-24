@@ -35,6 +35,30 @@ const Wrapper = styled.div`
   @media (min-width: 701px) and (max-width: 800px) {
     zoom: 0.8;
   }
+
+  @media (min-width: 801px) and (max-width: 900px) {
+    zoom: 0.3;
+  }
+
+  @media (min-width: 901px) and (max-width: 1000px) {
+    zoom: 0.4;
+  }
+
+  @media (min-width: 1001px) and (max-width: 1100px) {
+    zoom: 0.5;
+  }
+
+  @media (min-width: 1101px) and (max-width: 1200px) {
+    zoom: 0.6;
+  }
+
+  @media (min-width: 1201px) and (max-width: 1300px) {
+    zoom: 0.7;
+  }
+
+  @media (min-width: 1301px) and (max-width: 1400px) {
+    zoom: 0.8;
+  }
 `;
 
 export class PreviewWrapper extends Component {
