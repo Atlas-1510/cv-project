@@ -8,7 +8,7 @@ const StyledFooter = styled.footer`
   height: 3rem;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: flex-end;
 `;
 

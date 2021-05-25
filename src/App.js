@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Header from "./components/Form/Header";
+import Header from "./components/Header";
 import Body from "./components/Body";
+import Footer from "./components/Footer";
+
+import { v4 as uuidv4 } from "uuid";
+import ReactToPrint from "react-to-print";
+import "./App.css";
+
 import Form from "./components/Form/Form";
 import PersonalInformation from "./components/Form/PersonalInformation";
 import Experiences from "./components/Form/Experience/Experiences";
@@ -10,11 +16,6 @@ import Section from "./components/utilities/Section";
 import Button from "./components/utilities/Button/Button";
 import Preview from "./components/Preview/Preview";
 import PreviewWrapper from "./components/Preview/PreviewWrapper";
-import Footer from "./components/Footer";
-
-import { v4 as uuidv4 } from "uuid";
-import ReactToPrint from "react-to-print";
-import "./App.css";
 
 export default class App extends Component {
   state = {
@@ -284,16 +285,13 @@ export default class App extends Component {
 const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   min-height: 100vh;
 `;
 
 const appStyles = {
   headerColor: "#313638",
   titleColor: "#F09D51",
-  // backgroundColor: "#EEEDE8",
   backgroundColor: "#f5f5f5",
-  // sectionColor: "#FEE0AE",
   sectionColor: "#E0DFD5",
   highLightColor: "#93C9DC",
 };
