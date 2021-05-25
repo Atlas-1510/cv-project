@@ -15,6 +15,7 @@ export default Body;
 
 const BodyStyles = styled.main`
   background: ${(props) => props.appStyles.backgroundColor};
+  flex-grow: 2;
   width: 100%;
 
   @media (max-width: 800px) {

@@ -2,15 +2,20 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  padding: 2rem;
+  margin: 2rem;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   max-height: auto;
 
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
   position: sticky;
-  top: 0px;
+  top: 2rem;
 
   @media (min-width: 201px) and (max-width: 300px) {
     zoom: 0.3;

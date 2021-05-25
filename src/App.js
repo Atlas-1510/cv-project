@@ -10,6 +10,7 @@ import Section from "./components/utilities/Section";
 import Button from "./components/utilities/Button/Button";
 import Preview from "./components/Preview/Preview";
 import PreviewWrapper from "./components/Preview/PreviewWrapper";
+import Footer from "./components/Footer";
 
 import { v4 as uuidv4 } from "uuid";
 import ReactToPrint from "react-to-print";
@@ -274,6 +275,7 @@ export default class App extends Component {
             />
           </PreviewWrapper>
         </Body>
+        <Footer appStyles={appStyles} />
       </AppWrapper>
     );
   }
@@ -283,6 +285,7 @@ const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
 `;
 
 const appStyles = {
@@ -292,4 +295,5 @@ const appStyles = {
   backgroundColor: "#f5f5f5",
   // sectionColor: "#FEE0AE",
   sectionColor: "#E0DFD5",
+  highLightColor: "#93C9DC",
 };
