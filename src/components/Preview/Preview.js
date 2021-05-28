@@ -5,7 +5,6 @@ import RightPanel from "./RightPanel";
 import MainPanel from "./MainPanel";
 
 const PreviewStyler = styled.div`
-  ${"" /* Fix the positioning into the center later */}
   width: 209.99mm;
   height: 296.99mm;
   display: grid;
@@ -16,10 +15,15 @@ const PreviewStyler = styled.div`
 `;
 
 export class Preview extends Component {
+  constructor(props) {
+    super(props);
+    this.myRef = React.createRef();
+  }
+
   render() {
     const { userInfo } = this.props;
     return (
-      <PreviewStyler>
+      <PreviewStyler ref={this.myRef}>
         <Header personalInfo={userInfo.personalInfo} />
         <RightPanel personalInfo={userInfo.personalInfo} />
         <MainPanel
