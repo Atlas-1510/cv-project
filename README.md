@@ -6,8 +6,9 @@ This React application creates a formatted resume based on user input of persona
 
 This project was built using the following:
 
-- styled-components
-- react-to-print
-- react-text-fit
-- uuidv4
-- create-react-app
+- [styled-components](https://styled-components.com/)
+- [react-icons](https://react-icons.github.io/react-icons/)
+- [react-to-print](https://github.com/gregnb/react-to-print)
+- [react-text-fit](https://github.com/malte-wessel/react-textfit)
+- [uuidv4](https://www.npmjs.com/package/uuid)
+- [create-react-app](https://github.com/facebook/create-react-app)
