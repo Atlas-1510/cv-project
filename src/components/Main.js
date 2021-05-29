@@ -75,6 +75,7 @@ function Main(props) {
         description: "",
       },
       experience: [
+        // Example of an experience item below
         // {
         //   id: uuidv4(),
         //   position: "",
@@ -85,6 +86,7 @@ function Main(props) {
         // },
       ],
       education: [
+        // Example of an education item below
         // {
         //   id: uuidv4(),
         //   institution: "",
