@@ -1,58 +1,124 @@
-import React, { Component } from "react";
+import React from "react";
 import { Input } from "../../utilities/Input";
+import PropTypes from "prop-types";
 
-export class Experience extends Component {
-  render() {
-    return (
-      <>
-        <Input
-          appStyles={this.props.appStyles}
-          title="Position"
-          name="position"
-          onChange={this.props.onChange}
-          stateSection={this.props.stateSection}
-          id={this.props.id}
-          value={this.props.experience.position}
-        ></Input>
-        <Input
-          appStyles={this.props.appStyles}
-          title="Organisation"
-          name="organisation"
-          onChange={this.props.onChange}
-          stateSection={this.props.stateSection}
-          id={this.props.id}
-          value={this.props.experience.organisation}
-        ></Input>
-        <Input
-          appStyles={this.props.appStyles}
-          title="Location"
-          name="location"
-          onChange={this.props.onChange}
-          stateSection={this.props.stateSection}
-          id={this.props.id}
-          value={this.props.experience.location}
-        ></Input>
-        <Input
-          appStyles={this.props.appStyles}
-          title="Start date"
-          name="start"
-          onChange={this.props.onChange}
-          stateSection={this.props.stateSection}
-          id={this.props.id}
-          value={this.props.experience.start}
-        ></Input>
-        <Input
-          appStyles={this.props.appStyles}
-          title="End date"
-          name="end"
-          onChange={this.props.onChange}
-          stateSection={this.props.stateSection}
-          id={this.props.id}
-          value={this.props.experience.end}
-        ></Input>
-      </>
-    );
-  }
+function Experience(props) {
+  return (
+    <>
+      <Input
+        appStyles={props.appStyles}
+        title="Position"
+        name="position"
+        handleChange={props.handleChange}
+        stateSection={props.stateSection}
+        id={props.id}
+        value={props.experience.position}
+      ></Input>
+      <Input
+        appStyles={props.appStyles}
+        title="Organisation"
+        name="organisation"
+        handleChange={props.handleChange}
+        stateSection={props.stateSection}
+        id={props.id}
+        value={props.experience.organisation}
+      ></Input>
+      <Input
+        appStyles={props.appStyles}
+        title="Location"
+        name="location"
+        handleChange={props.handleChange}
+        stateSection={props.stateSection}
+        id={props.id}
+        value={props.experience.location}
+      ></Input>
+      <Input
+        appStyles={props.appStyles}
+        title="Start date"
+        name="start"
+        handleChange={props.handleChange}
+        stateSection={props.stateSection}
+        id={props.id}
+        value={props.experience.start}
+      ></Input>
+      <Input
+        appStyles={props.appStyles}
+        title="End date"
+        name="end"
+        handleChange={props.handleChange}
+        stateSection={props.stateSection}
+        id={props.id}
+        value={props.experience.end}
+      ></Input>
+    </>
+  );
 }
 
+Experience.propTypes = {
+  experience: PropTypes.object.isRequired,
+  appStyles: PropTypes.object.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  stateSection: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+};
+
 export default Experience;
+
+// import React, { Component } from "react";
+// import { Input } from "../../utilities/Input";
+
+// export class Experience extends Component {
+//   render() {
+//     return (
+//       <>
+//         <Input
+//           appStyles={props.appStyles}
+//           title="Position"
+//           name="position"
+//           handleChange={props.handleChange}
+//           stateSection={props.stateSection}
+//           id={props.id}
+//           value={props.experience.position}
+//         ></Input>
+//         <Input
+//           appStyles={props.appStyles}
+//           title="Organisation"
+//           name="organisation"
+//           handleChange={props.handleChange}
+//           stateSection={props.stateSection}
+//           id={props.id}
+//           value={props.experience.organisation}
+//         ></Input>
+//         <Input
+//           appStyles={props.appStyles}
+//           title="Location"
+//           name="location"
+//           handleChange={props.handleChange}
+//           stateSection={props.stateSection}
+//           id={props.id}
+//           value={props.experience.location}
+//         ></Input>
+//         <Input
+//           appStyles={props.appStyles}
+//           title="Start date"
+//           name="start"
+//           handleChange={props.handleChange}
+//           stateSection={props.stateSection}
+//           id={props.id}
+//           value={props.experience.start}
+//         ></Input>
+//         <Input
+//           appStyles={props.appStyles}
+//           title="End date"
+//           name="end"
+//           handleChange={props.handleChange}
+//           stateSection={props.stateSection}
+//           id={props.id}
+//           value={props.experience.end}
+//         ></Input>
+//       </>
+//     );
+//   }
+// }
+
+// export default Experience;

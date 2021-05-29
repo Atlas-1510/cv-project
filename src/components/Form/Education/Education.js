@@ -1,49 +1,106 @@
-import React, { Component } from "react";
+import React from "react";
 import { Input } from "../../utilities/Input";
+import PropTypes from "prop-types";
 
-export class Education extends Component {
-  render() {
-    return (
-      <>
-        <Input
-          appStyles={this.props.appStyles}
-          title="Institution"
-          name="institution"
-          onChange={this.props.onChange}
-          stateSection={this.props.stateSection}
-          id={this.props.id}
-          value={this.props.education.institution}
-        />
-        <Input
-          appStyles={this.props.appStyles}
-          title="Degree"
-          name="degree"
-          onChange={this.props.onChange}
-          stateSection={this.props.stateSection}
-          id={this.props.id}
-          value={this.props.education.degree}
-        />
-        <Input
-          appStyles={this.props.appStyles}
-          title="Start Date"
-          name="start"
-          onChange={this.props.onChange}
-          stateSection={this.props.stateSection}
-          id={this.props.id}
-          value={this.props.education.start}
-        />
-        <Input
-          appStyles={this.props.appStyles}
-          title="End Date"
-          name="end"
-          onChange={this.props.onChange}
-          stateSection={this.props.stateSection}
-          id={this.props.id}
-          value={this.props.education.end}
-        />
-      </>
-    );
-  }
+function Education(props) {
+  return (
+    <>
+      <Input
+        appStyles={props.appStyles}
+        title="Institution"
+        name="institution"
+        handleChange={props.handleChange}
+        stateSection={props.stateSection}
+        id={props.id}
+        value={props.education.institution}
+      />
+      <Input
+        appStyles={props.appStyles}
+        title="Degree"
+        name="degree"
+        handleChange={props.handleChange}
+        stateSection={props.stateSection}
+        id={props.id}
+        value={props.education.degree}
+      />
+      <Input
+        appStyles={props.appStyles}
+        title="Start Date"
+        name="start"
+        handleChange={props.handleChange}
+        stateSection={props.stateSection}
+        id={props.id}
+        value={props.education.start}
+      />
+      <Input
+        appStyles={props.appStyles}
+        title="End Date"
+        name="end"
+        handleChange={props.handleChange}
+        stateSection={props.stateSection}
+        id={props.id}
+        value={props.education.end}
+      />
+    </>
+  );
 }
 
+Education.propTypes = {
+  education: PropTypes.object.isRequired,
+  appStyles: PropTypes.object.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  stateSection: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+};
+
 export default Education;
+
+// import React, { Component } from "react";
+// import { Input } from "../../utilities/Input";
+
+// export class Education extends Component {
+//   render() {
+//     return (
+//       <>
+//         <Input
+//           appStyles={props.appStyles}
+//           title="Institution"
+//           name="institution"
+//           handleChange={props.handleChange}
+//           stateSection={props.stateSection}
+//           id={props.id}
+//           value={props.education.institution}
+//         />
+//         <Input
+//           appStyles={props.appStyles}
+//           title="Degree"
+//           name="degree"
+//           handleChange={props.handleChange}
+//           stateSection={props.stateSection}
+//           id={props.id}
+//           value={props.education.degree}
+//         />
+//         <Input
+//           appStyles={props.appStyles}
+//           title="Start Date"
+//           name="start"
+//           handleChange={props.handleChange}
+//           stateSection={props.stateSection}
+//           id={props.id}
+//           value={props.education.start}
+//         />
+//         <Input
+//           appStyles={props.appStyles}
+//           title="End Date"
+//           name="end"
+//           handleChange={props.handleChange}
+//           stateSection={props.stateSection}
+//           id={props.id}
+//           value={props.education.end}
+//         />
+//       </>
+//     );
+//   }
+// }
+
+// export default Education;
