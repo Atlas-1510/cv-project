@@ -1,6 +1,6 @@
 import React from "react";
 import Education from "./Education";
-import Button from "../../utilities/Button/Button";
+import Button from "../../utilities/Button";
 import PropTypes from "prop-types";
 
 function Educations(props) {

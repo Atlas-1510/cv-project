@@ -5,7 +5,7 @@ import PersonalInformation from "./PersonalInformation";
 import Experiences from "./Experience/Experiences";
 import Educations from "./Education/Educations";
 import Section from "../utilities/Section";
-import Button from "../utilities/Button/Button";
+import Button from "../utilities/Button";
 
 function Form(props) {
   return (

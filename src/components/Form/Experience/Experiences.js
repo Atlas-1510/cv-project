@@ -1,6 +1,6 @@
 import React from "react";
 import Experience from "./Experience";
-import Button from "../../utilities/Button/Button";
+import Button from "../../utilities/Button";
 import PropTypes from "prop-types";
 
 function Experiences(props) {
