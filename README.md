@@ -2,6 +2,8 @@
 
 This React application creates a formatted resume based on user input of personal details, experience, and education history. The resume can be printed or saved as a PDF.
 
+:point_right: [View the project here](https://atlas-1510.github.io/cv-project/) :point_left:
+
 ## Included packages
 
 This project was built using the following:
